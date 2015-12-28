@@ -87,7 +87,7 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 - (void)setCustomProperty:(id)value {}
 - (id)customProperty {}
 
-#pragma mark - IBActions
+#pragma mark - IBAction methods
 
 - (IBAction)submitData:(id)sender {}
 
@@ -198,7 +198,7 @@ Constants should be camel-case with all words capitalized and prefixed by the re
 **Preferred:**
 
 ```objc
-static NSTimeInterval const LLTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+static NSTimeInterval const LLZTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
 **Not Preferred:**
@@ -266,7 +266,7 @@ Direct access to instance variables that 'back' properties should be avoided exc
 **Preferred:**
 
 ```objc
-@interface LLTutorial : NSObject
+@interface LLZTutorial : NSObject
 
 @property (nonatomic, strong) NSString *tutorialName;
 
@@ -276,7 +276,7 @@ Direct access to instance variables that 'back' properties should be avoided exc
 **Not Preferred:**
 
 ```objc
-@interface LLTutorial : NSObject {
+@interface LLZTutorial : NSObject {
   NSString *tutorialName;
 }
 ```
@@ -364,9 +364,9 @@ Constants are preferred over in-line string literals or numbers, as they allow f
 **Preferred:**
 
 ```objc
-static NSString * const LLAboutViewControllerCompanyName = @"RayWenderlich.com";
+static NSString * const LLZAboutViewControllerCompanyName = @"RayWenderlich.com";
 
-static CGFloat const LLImageThumbnailHeight = 50.0;
+static CGFloat const LLZImageThumbnailHeight = 50.0;
 ```
 
 **Not Preferred:**
@@ -384,21 +384,21 @@ When using `enum`s, it is recommended to use the new fixed underlying type speci
 **For Example:**
 
 ```objc
-typedef NS_ENUM(NSInteger, LLLeftMenuTopItemType) {
-  LLLeftMenuTopItemMain,
-  LLTLeftMenuTopItemShows,
-  LLTLeftMenuTopItemSchedule
+typedef NS_ENUM(NSInteger, LLZLeftMenuTopItemType) {
+  LLZLeftMenuTopItemMain,
+  LLZTLeftMenuTopItemShows,
+  LLZTLeftMenuTopItemSchedule
 };
 ```
 
 You can also make explicit value assignments (showing older k-style constant definition):
 
 ```objc
-typedef NS_ENUM(NSInteger, LLGlobalConstants) {
-  LLPinSizeMin = 1,
-  LLPinSizeMax = 5,
-  LLPinCountMin = 100,
-  LLPinCountMax = 500,
+typedef NS_ENUM(NSInteger, LLZGlobalConstants) {
+  LLZPinSizeMin = 1,
+  LLZPinSizeMax = 5,
+  LLZPinCountMin = 100,
+  LLZPinCountMax = 500,
 };
 ```
 
@@ -458,16 +458,16 @@ switch (condition) {
 When using an enumerated type for a switch, 'default' is not needed.   For example:
 
 ```objc
-LLLeftMenuTopItemType menuType = LLLeftMenuTopItemMain;
+LLZLeftMenuTopItemType menuType = LLZLeftMenuTopItemMain;
 
 switch (menuType) {
-  case LLLeftMenuTopItemMain:
+  case LLZLeftMenuTopItemMain:
     // ...
     break;
-  case LLLeftMenuTopItemShows:
+  case LLZLeftMenuTopItemShows:
     // ...
     break;
-  case LLLeftMenuTopItemSchedule:
+  case LLZLeftMenuTopItemSchedule:
     // ...
     break;
 }
@@ -481,7 +481,7 @@ Private properties should be declared in class extensions (anonymous categories)
 **For Example:**
 
 ```objc
-@interface LLDetailViewController ()
+@interface LLZDetailViewController ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
@@ -584,8 +584,8 @@ See [Class Constructor Methods](#class-constructor-methods) for link to article 
 Where class constructor methods are used, these should always return type of 'instancetype' and never 'id'. This ensures the compiler correctly infers the result type. 
 
 ```objc
-@interface Airplane
-+ (instancetype)airplaneWithType:(LLAirplaneType)type;
+@interface LLZAirplane
++ (instancetype)airplaneWithType:(LLZAirplaneType)type;
 @end
 ```
 
