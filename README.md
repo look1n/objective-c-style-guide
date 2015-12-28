@@ -1,4 +1,4 @@
-# The look1n Objective-C style guide.
+# The Objective-C style guide.
 
 This style guide is based on the coding conventions for raywenderlich.com and can be found in original repo. 
 
